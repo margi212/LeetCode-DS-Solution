@@ -15,6 +15,7 @@
  */
 class Solution {
     public boolean isValidBST(TreeNode root) { 
+//approach-1(using inorder)
 //         List<Integer> list = inOrder(root,new ArrayList<Integer>());
 //         Object[] objectAarray = list.toArray();
 //         int length = objectAarray.length;;
@@ -23,8 +24,11 @@ class Solution {
 //             intArray[i] = (int) objectAarray[i];
 //         }        
 //         return isSorted(intArray);
-            
+ 
+//approach-2(using recursion)
         return recursive(root,Long.MIN_VALUE,Long.MAX_VALUE);
+        
+//approach-3(using lleft max and right max)
     }
     
     private List<Integer> inOrder(TreeNode root,List<Integer> val) {
