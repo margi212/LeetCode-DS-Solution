@@ -14,8 +14,7 @@
  * }
  */
 class Solution {
-    public boolean isValidBST(TreeNode root) {
-             
+    public boolean isValidBST(TreeNode root) {             
         return recursive(root,Long.MIN_VALUE,Long.MAX_VALUE);
     }
     
