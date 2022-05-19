@@ -15,17 +15,16 @@
  */
 class Solution {
     public boolean isValidBST(TreeNode root) { 
-        List<Integer> list = inOrder(root,new ArrayList<Integer>());
-       
-        Object[] objectAarray = list.toArray();
-        int length = objectAarray.length;;
-        int [] intArray = new int[length];
-        for(int i =0; i < length; i++) {
-            intArray[i] = (int) objectAarray[i];
-        }
-        
-        return isSorted(intArray);
-        //return recursive(root,Long.MIN_VALUE,Long.MAX_VALUE);
+//         List<Integer> list = inOrder(root,new ArrayList<Integer>());
+//         Object[] objectAarray = list.toArray();
+//         int length = objectAarray.length;;
+//         int [] intArray = new int[length];
+//         for(int i =0; i < length; i++) {
+//             intArray[i] = (int) objectAarray[i];
+//         }        
+//         return isSorted(intArray);
+            
+        return recursive(root,Long.MIN_VALUE,Long.MAX_VALUE);
     }
     
     private List<Integer> inOrder(TreeNode root,List<Integer> val) {
