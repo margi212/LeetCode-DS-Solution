@@ -14,11 +14,45 @@
  * }
  */
 class Solution {
-    public boolean isValidBST(TreeNode root) {             
-        return recursive(root,Long.MIN_VALUE,Long.MAX_VALUE);
+    public boolean isValidBST(TreeNode root) { 
+        List<Integer> list = inOrder(root,new ArrayList<Integer>());
+       
+        Object[] objectAarray = list.toArray();
+        int length = objectAarray.length;;
+        int [] intArray = new int[length];
+        for(int i =0; i < length; i++) {
+            intArray[i] = (int) objectAarray[i];
+        }
+        
+        return isSorted(intArray);
+        //return recursive(root,Long.MIN_VALUE,Long.MAX_VALUE);
     }
     
-    public boolean recursive(TreeNode root,long left,long right){
+    private List<Integer> inOrder(TreeNode root,List<Integer> val) {
+        if(root !=  null) {
+            inOrder(root.left,val);
+            val.add(root.val);
+            inOrder(root.right,val);
+        }        
+        return val;
+    }
+    
+     private boolean isSorted(int[] a) {
+        // base case
+        if (a == null || a.length <= 1) {
+            return true;
+        }
+ 
+        for (int i = 0; i < a.length - 1; i++){
+            if (a[i] >= a[i + 1]) {
+                return false;
+            }
+        }
+ 
+        return true;
+    }
+    
+    private boolean recursive(TreeNode root,long left,long right){
         if(root == null)
             return true;
         
