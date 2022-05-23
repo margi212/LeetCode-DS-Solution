@@ -1,6 +1,7 @@
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
          List<List<Integer>> res = new ArrayList<List<Integer>>();
+// bruth-force
 //         for(int i=0;i<nums.length;i++){
 //             List<Integer> ai = new ArrayList<Integer>();
 //             for(int j=0;j<=i;j++){
