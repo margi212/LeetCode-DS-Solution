@@ -19,10 +19,13 @@ class Solution {
         
         if(nums[ci]<=target){
             current.add(nums[ci]);
+            //consider
             generateComb(nums,ci,target-nums[ci],current,ans);
+            //backtracking
             current.remove(current.size()-1);
         }
         
+        //not-consider
         generateComb(nums,ci+1,target,current,ans);
         return;       
     }
