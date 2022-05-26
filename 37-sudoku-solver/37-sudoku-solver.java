@@ -46,7 +46,7 @@ class Solution {
         for(int i= startRowIndex; i<= startRowIndex+2 ; i++)
             for( int j= startColIndex; j<=startColIndex+2; j++)
                 if(board[i][j] == currVal)
-                return false;
+                    return false;
         return true;
     }
     
