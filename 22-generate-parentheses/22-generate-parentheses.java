@@ -5,20 +5,20 @@ class Solution {
         return ans;
     }
     
-    public void getList(int n,int op,int cl,String str,List<String> ans){
-        if(op>n||cl>n)
+    public void getList(int n,int openCount,int closeCount,String currentStr,List<String> ans){
+        if(openCount>n||closeCount>n)
             return;
-        if(op == n && cl == n){
-            ans.add(str);
+        if(openCount == n && closeCount == n){
+            ans.add(currentStr);
             return;
         }
         
         //left call
-        getList(n,op+1,cl,str+"(",ans);
+        getList(n,openCount+1,closeCount,currentStr+"(",ans);
         
-        if(op>cl){
+        if(openCount>closeCount){
             //right call
-            getList(n,op,cl+1,str+")",ans);
+            getList(n,openCount,closeCount+1,currentStr+")",ans);
         }
     }
 }
