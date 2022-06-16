@@ -1,3 +1,5 @@
+//https://leetcode.com/problems/cheapest-flights-within-k-stops/discuss/1926143/Bellman-Ford-oror-Easy-Understanding-oror-Java
+//https://practice.geeksforgeeks.org/problems/negative-weight-cycle3504/1
 class Solution {
     public int findCheapestPrice(int n, int[][] flights, int src, int dest, int k) {
         int[] costs = new int[n];
