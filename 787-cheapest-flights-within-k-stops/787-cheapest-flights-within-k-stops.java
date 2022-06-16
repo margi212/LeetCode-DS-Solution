@@ -16,10 +16,7 @@ class Solution {
                 int v = edge[1];
                 int w = edge[2];
                 
-                if(costs[u] == Integer.MAX_VALUE)
-                    continue;
-                
-                 if (costs[u] + w < tempPrices[v]){
+                if(costs[u] != Integer.MAX_VALUE  && costs[u] + w < tempPrices[v]){
                      tempPrices[v] = costs[u] + w;
                  }
             }
