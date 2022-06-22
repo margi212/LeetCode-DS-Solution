@@ -82,7 +82,9 @@ class Solution {
             for(ArrayList<Integer> cNeigh : adj.get(cVertex)){
                 int cNeighVertex = cNeigh.get(0);
                 int cNeighCost = cNeigh.get(1);
-                
+               
+               // cNeighCost + cCost is for Dijstra's
+               // pq.add(new Pair(cNeighVertex,cNeighCost + cCost)); 
                 pq.add(new Pair(cNeighVertex,cNeighCost));
             }
         }
