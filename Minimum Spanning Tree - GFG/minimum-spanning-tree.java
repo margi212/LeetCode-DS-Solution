@@ -83,6 +83,8 @@ class Solution {
                 int cNeighVertex = cNeigh.get(0);
                 int cNeighCost = cNeigh.get(1);
                
+                if(visited[cNeighVertex])
+                    continue;
                // cNeighCost + cCost is for Dijstra's
                // pq.add(new Pair(cNeighVertex,cNeighCost + cCost)); 
                 pq.add(new Pair(cNeighVertex,cNeighCost));
