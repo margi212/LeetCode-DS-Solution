@@ -17,8 +17,12 @@ class Solution {
             return map.get(key);
         }
         
-        int ans = getPaths(m,n,cRow,cCol+1,map) + getPaths(m,n,cRow+1,cCol,map);
+        int rightMove =  getPaths(m,n,cRow,cCol+1,map);
+        int downMove =  getPaths(m,n,cRow+1,cCol,map);
+        int ans = rightMove + downMove;
+        
         map.put(key,ans);
+        
         return ans;
     }
 }
