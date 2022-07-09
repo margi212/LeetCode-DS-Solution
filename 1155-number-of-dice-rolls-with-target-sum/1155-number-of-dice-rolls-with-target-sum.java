@@ -10,7 +10,7 @@ class Solution {
         if(dice==0 || targetSum <= 0)
             return 0;
         
-        String key = dice+"-"+face+"-"+targetSum;
+        String key = dice+"-"+targetSum;
         
         if(map.containsKey(key)){
             return map.get(key);
