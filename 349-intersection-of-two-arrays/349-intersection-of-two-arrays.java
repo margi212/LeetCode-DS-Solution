@@ -9,10 +9,10 @@ class Solution {
             }
         }
         
-        for(int num:nums2){
-            if(ans.containsKey(num) && ans.get(num)){
-                result.add(num);
-                ans.put(num,false);
+        for(int cNum:nums2){
+            if(ans.containsKey(cNum) && ans.get(cNum)){
+                result.add(cNum);
+                ans.put(cNum,false);
             }
         }
         
