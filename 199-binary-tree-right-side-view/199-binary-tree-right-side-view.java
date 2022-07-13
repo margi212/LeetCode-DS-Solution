@@ -26,8 +26,8 @@ class Solution {
         if(ans.size()<level)
             ans.add(root.val);
         
-            rightList(root.right,level+1,ans);
-            rightList(root.left,level+1,ans);
+        rightList(root.right,level+1,ans);
+        rightList(root.left,level+1,ans);
         
         return ans;
     }
