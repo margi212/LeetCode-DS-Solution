@@ -27,9 +27,10 @@ class Solution {
         ListNode l1 = left;
         ListNode l2 = right;
         
-        while(l1!=null &&l2!=null){
-            if(l1.val!=l2.val)
+        while(l1 != null && l2 != null){
+            if(l1.val != l2.val){
                 return false;
+            }
             
             l1 = l1.next;
             l2 = l2.next;
@@ -46,7 +47,6 @@ class Solution {
         curr.next = prev;
         
         return reverseList(newNode,curr);
-        
     }
     
     private ListNode middleNode(ListNode head) {
