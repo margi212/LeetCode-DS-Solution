@@ -1,5 +1,6 @@
 class Solution {
     public void sortColors(int[] nums) {
+        //striver's youtube
         int low=0,mid=0;
         int high=nums.length-1;
         
