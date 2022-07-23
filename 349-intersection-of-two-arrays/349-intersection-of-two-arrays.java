@@ -1,18 +1,18 @@
 class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
-        HashMap<Integer,Boolean> ans = new HashMap<Integer,Boolean>();
+        HashMap<Integer,Boolean> map = new HashMap<>();
         ArrayList<Integer> result = new ArrayList<>();
-  
-        for(int cNum:nums1){
-            if(!ans.containsKey(cNum)){
-                ans.put(cNum,true);
+        
+        for(int i=0;i<nums1.length;i++){
+            if(!map.containsKey(nums1[i])){
+                map.put(nums1[i],true);
             }
         }
         
-        for(int cNum:nums2){
-            if(ans.containsKey(cNum) && ans.get(cNum)){
-                result.add(cNum);
-                ans.put(cNum,false);
+        for(int i=0;i<nums2.length;i++){
+            if(map.containsKey(nums2[i]) && map.get(nums2[i])){
+                map.put(nums2[i],false);
+                result.add(nums2[i]);
             }
         }
         
@@ -21,6 +21,5 @@ class Solution {
             res[i] = result.get(i);
         }
         return res;
-        
     }
 }
