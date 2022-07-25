@@ -18,10 +18,11 @@ class Solution {
             }
                 
         }
-         return Math.max(
+         
+        return Math.max(
             maxMoney(0,temp1,new HashMap<Integer,Integer>()),
             maxMoney(0,temp2,new HashMap<Integer,Integer>())
-         );
+        );
     }
     
     public int maxMoney(int currentI,int[] nums,HashMap<Integer,Integer> memo){
