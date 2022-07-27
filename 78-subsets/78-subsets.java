@@ -1,23 +1,13 @@
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
-         List<List<Integer>> res = new ArrayList<List<Integer>>();
-// bruth-force
-//         for(int i=0;i<nums.length;i++){
-//             List<Integer> ai = new ArrayList<Integer>();
-//             for(int j=0;j<=i;j++){
-//                  ai.add(nums[j]);
-//             }            
-//             res.add(ai);          
-            
-//         }        
-//         return res;
+        HashSet<List<Integer>> res = new HashSet<>();
         
         getSubsets(nums,0,new ArrayList<Integer>(),res);
         
-        return res;
+        return new ArrayList<>(res);
     }
     
-    private void getSubsets(int[] nums,int ci, List<Integer> subset,List<List<Integer>> res) {
+    private void getSubsets(int[] nums ,int ci, List<Integer> subset,HashSet<List<Integer>> res) {
         
         if(ci>=nums.length){
             res.add(new ArrayList<>(subset));
@@ -33,8 +23,7 @@ class Solution {
         subset.remove(subset.size()-1);
         
         getSubsets(nums,ci+1,subset,res);
-            
-        return;
+    
     }
     
 }
