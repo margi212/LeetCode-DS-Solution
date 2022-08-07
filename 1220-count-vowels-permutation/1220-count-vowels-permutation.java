@@ -4,6 +4,7 @@ class Solution {
         long mod = 1000000007;
         
         while(n-- > 1){
+         
             long new_a = a % mod, new_e = e % mod, new_i = i % mod, new_o = o % mod, new_u = u % mod;
             a = new_e + new_i + new_u;
             e = new_a + new_i;
