@@ -10,7 +10,6 @@ class Solution {
             }
         }
         
-        HashMap<Character,Integer> rn = new HashMap<>();
         for(Character ch:ransomNote.toCharArray()){
             if(mg.containsKey(ch)){
                 if(mg.get(ch)<=0)
