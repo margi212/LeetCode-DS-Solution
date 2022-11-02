@@ -16,33 +16,38 @@ class Solution {
         int level = 0;
         char[] currArr;
         while(!queue.isEmpty()){
-          int size=queue.size();
+          
+            int size=queue.size();
 
-          while(size-->0){
-            String curr=queue.poll();
-            if(curr.equals(end)) return level;
-            currArr=curr.toCharArray();
+            while(size-- > 0){
+                String curr = queue.poll();
+                
+                if(curr.equals(end)){
+                    return level;
+                }
+                
+                currArr = curr.toCharArray();
 
-            for(int i=0;i<currArr.length;i++){
-                char old=currArr[i];
-           
-            for(char c:choices){
-                currArr[i]=c;
-                String newStr=new String(currArr);
-                if(!seen.contains(newStr)&& bankSet.contains(newStr)){
-                    queue.offer(newStr);
-                    seen.add(newStr);
+                for(int i=0;i<currArr.length;i++){
+                    char old=currArr[i];
 
+                    for(char c:choices){
+                        currArr[i]=c;
+                        String newStr=new String(currArr);
+                        if(!seen.contains(newStr)&& bankSet.contains(newStr)){
+                            queue.offer(newStr);
+                            seen.add(newStr);
+
+                        }
+                    }
+                    currArr[i]=old;
                 }
             }
-            currArr[i]=old;
-             }
-          }
-          level++;
+            
+            level++;
         }
+        
         return -1;
-        
-        
-       // return level;
+
     }
 }
