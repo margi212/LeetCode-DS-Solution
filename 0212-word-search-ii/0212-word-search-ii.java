@@ -42,7 +42,7 @@ class Solution {
         root.word = word;
     }
     
-    private void dfs(char[][] board,int cRow,int cCol,int m,int n, TrieNode root,List<String> answer){
+    private void dfs(char[][] board, int cRow, int cCol, int m, int n, TrieNode root, List<String> answer){
         
         if(root.word != null){
             answer.add(root.word);
