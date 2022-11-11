@@ -127,23 +127,23 @@ class BinaryTree
     {
          
         ArrayList<Integer> res = new ArrayList<>();
-        traversePreOrder(root,0,res);
+        traversePreOrder(root,res);
         
         return res;
     }
     
-    private static void traversePreOrder(Node root,int ind,ArrayList<Integer> res){
+    private static void traversePreOrder(Node root,ArrayList<Integer> res){
         if(root==null)
             return;
         
         res.add(root.data);
        
         if(root.left!=null){
-            traversePreOrder(root.left,ind+1,res);
+            traversePreOrder(root.left,res);
         }
         
         if(root.right!=null){
-            traversePreOrder(root.right,ind+1,res);
+            traversePreOrder(root.right,res);
         }
     }
 
