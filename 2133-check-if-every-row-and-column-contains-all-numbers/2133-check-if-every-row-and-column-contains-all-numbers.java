@@ -11,38 +11,17 @@ class Solution {
                  if(!map1.containsKey(matrix[i][j])){
                      map1.put(matrix[i][j],true);
                  }else{
-                     map1.put(matrix[i][j],false);
-                     //return false;
+                     return false;
                  }
                 
                  if(!map2.containsKey(matrix[j][i])){
                      map2.put(matrix[j][i],true);
                  }else{
-                     map2.put(matrix[j][i],false);
-                     //return false;
+                     return false;
                  }
             }
-            
-            
-        
-        
-   
-        for (Map.Entry<Integer,Boolean> entry : map1.entrySet()) {
-                Integer key = entry.getKey();
-                Boolean value = entry.getValue();
-                if(!value)
-                    return false;
-                
-            }
-        
-        for (Map.Entry<Integer,Boolean> entry : map2.entrySet()) {
-                Integer key = entry.getKey();
-                Boolean value = entry.getValue();
-                if(!value)
-                    return false;
-                
-            }
         }
+        
         return true;
         
 //             int n = matrix.length ;
