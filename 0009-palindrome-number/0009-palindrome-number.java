@@ -17,7 +17,7 @@ class Solution {
             reverse = temp%10 + reverse*10;
             temp = temp/10;
         }
-        return reverse==x?true:false;
+        return reverse==x;
 
     }
 }
