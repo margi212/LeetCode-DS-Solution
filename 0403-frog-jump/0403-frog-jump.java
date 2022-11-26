@@ -1,3 +1,4 @@
+//https://www.youtube.com/watch?v=1V8gRXh1qbU
 class Solution {
     public boolean canCross(int[] stones) {
         HashMap<Integer,HashSet<Integer>> map = new HashMap<>();
