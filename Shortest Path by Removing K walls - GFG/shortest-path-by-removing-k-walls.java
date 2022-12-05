@@ -49,28 +49,25 @@ class Solution {
     static int shotestPath(int[][] mat, int m, int n, int k) {   // code here
         int arrx[] = {0,0,1,-1};
         int arry[] = {1,-1,0,0};
-        int out = Integer.MAX_VALUE;
+        int ans = Integer.MAX_VALUE;
+        
         Queue<Node> q = new LinkedList<>();
         boolean vist[][][] = new boolean[m][n][k+1];
         vist[0][0][0] = true;
         q.add(new Node(0,0,0,0));
-        while(!q.isEmpty())
-        {
+        
+        while(!q.isEmpty()) {
             Node current = q.poll();
-            if(current.x == m-1 && current.y == n-1)
-            {
-                out = Math.min(out,current.dist);
-                return out;
+            if(current.x == m-1 && current.y == n-1) {
+                ans = Math.min(ans,current.dist);
+                return ans;
             }
-            for(int i = 0;i<4;i++)
-            {
+            for(int i = 0;i<4;i++) {
                 int x0 = current.x+arrx[i];
                 int y0 = current.y+arry[i];
-                if(x0>=0 && x0<m && y0>=0 && y0<n)
-                {
+                if(x0>=0 && x0<m && y0>=0 && y0<n) {
                     int k0 = current.k+mat[x0][y0];
-                    if(k0<=k && !vist[x0][y0][k0])
-                    {
+                    if(k0<=k && !vist[x0][y0][k0]) {
                         vist[x0][y0][k0] = true;
                         q.add(new Node(x0,y0,k0,current.dist+1));
                     }
